@@ -1,0 +1,8 @@
+*.png
+*.jpg
+*.log
+*.json
+*.pkl
+
+exp/
+!config/exp/

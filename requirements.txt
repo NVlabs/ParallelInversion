@@ -1,0 +1,10 @@
+rembg
+commentjson
+numpy==1.22.3
+imageio==2.16.1
+pybind11
+scipy
+tqdm
+opencv-python
+configargparse
+pyyaml

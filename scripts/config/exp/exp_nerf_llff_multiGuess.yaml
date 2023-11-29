@@ -1,0 +1,58 @@
+
+#Identifier
+dataset_name: "nerf_llff"
+
+#Model registration
+network: '/../configs/nerf/hashgrid.json'
+train: True
+gui: True
+save_snapshot: 'model.msgpack'
+n_steps: 10000
+render_aabb_scale: 2
+
+#Target
+scene: 'fern'
+
+##Add noise to the target view to simulate different cases
+#noise: 'poisson'
+#sigma: 0.01
+#amount: 0.05
+#delta_brightness: 0.2
+#random_maskout: True
+
+#Noisy start
+START_FROM_NOISY_GT: True
+delta_rot_range_start: 15  # cannot be too large
+delta_trans_range_start: 0.15  # smaller as llff dataset only has part of the view
+
+#Optimization params
+n_camera_samples: 64
+n_steps_pose_optimization: 2560 # 128 * 20
+delta_rot_range: 15
+delta_trans_range: 0.3
+
+#Hyperparameters
+loss_type: 'L2'
+extrinsic_learning_rate: 0.003 # 0.001 by default
+extrinsic_learning_rate_rot: 0.005 # 0.001 by default
+extrinsic_learning_rate_base_step: 256 # 128 by default
+reg_weight: 0.0001
+n_steps_between_cam_updates: 4
+n_steps_between_error_map_updates: 128
+n_steps_first_reinitialization: 512
+n_steps_between_reinitialization: 512
+reinitialize_top_ratio: 0.25
+delta_rot_range_resample: 3
+delta_trans_range_resample: 0.1
+
+#Ablation
+train_cam_with_segmented_bg: True
+reinitialize_cam_poses: True
+
+#Debug related
+POSE_ESTIMATION_ONLY: True # enable it when you are certain that the model has been trained to skip double-check
+#GUI_ENABLED: True
+random_seed: 1234
+
+#For testing
+BULK_EXP: True

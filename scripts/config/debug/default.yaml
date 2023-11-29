@@ -1,0 +1,14 @@
+# [nerf synthetic data]
+#scene: 'lego'
+#scene: 'drums'
+
+# [llff data] (Need to preprocess first, see colmap2nerf.py)
+scene: 'fern' # fern
+#scene: 'fortress' # fortress
+#scene: 'horns' # horns
+#scene: 'room' # room
+
+n_steps: 20000 # small objects need more time to converge
+network: '/../configs/nerf/hashgrid.json'
+train: True
+gui: True

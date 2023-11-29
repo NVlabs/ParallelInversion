@@ -1,0 +1,12 @@
+## Read from llff dataset
+
+#images: "../data/nerf/nerf_llff_data/fern/images_8"
+#images: "../data/nerf/nerf_llff_data/fortress/images_8"
+#images: "../data/nerf/nerf_llff_data/horns/images_8"
+#images: "../data/nerf/nerf_llff_data/room/images_8"
+
+images_interval: 1 # do not change this
+run_read_from_dataset_nerf_llff: True
+aabb_scale: 2
+
+no_run_video_extraction: True # Skip this, as llff dataset is already extracted
